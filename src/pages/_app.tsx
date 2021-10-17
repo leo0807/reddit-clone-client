@@ -9,7 +9,8 @@ import { AuthProvider } from '../context/auth';
 
 import { useRouter } from 'next/router';
 // 添加环境变量后需要重启项目
-Axios.defaults.baseURL = process.env.NEXT_PUBLIC_SERVER_BASE_URL + '/api'; //默认URL
+Axios.defaults.baseURL = 'https://sleepy-anchorage-83122.herokuapp.com' + '/api'; //默认URL
+// Axios.defaults.baseURL = process.env.NEXT_PUBLIC_SERVER_BASE_URL + '/api'; //默认URL
 console.log(Axios.defaults.baseURL)
 Axios.defaults.withCredentials = true;
 //  { withCredentials: true });
