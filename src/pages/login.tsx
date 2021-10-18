@@ -29,6 +29,8 @@ export default function Register() {
       
       router.push('/')
     } catch (err) {
+      console.log(err.response);
+      
       setErrors(err.response.data)
     }
   }
