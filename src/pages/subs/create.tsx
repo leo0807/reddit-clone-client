@@ -103,15 +103,27 @@ export default function create() {
 }
 // 没有验证，无法进入create页面
 
+// export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
+//   try {
+//     const cookie = req.headers.cookie;
+//     if (!cookie) throw new Error('Missing auth token cookie');
+
+//     await Axios.get('/auth/me', { headers: { cookie } });
+//     return { props: {} };
+//   } catch (err) {
+//     res.writeHead(307, { Location: '/login' }).end();
+//     return { props: { ok: false, reason: "some error description for your own consumption, not for client side" } }
+//   }
+// };
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   try {
-    const cookie = req.headers.cookie;
-    if (!cookie) throw new Error('Missing auth token cookie');
+    const cookie = req.headers.cookie
+    if (!cookie) throw new Error('Missing auth token cookie')
 
-    await Axios.get('/auth/me', { headers: { cookie } });
-    return { props: {} };
+    await Axios.get('/auth/me', { headers: { cookie } })
+
+    return { props: {} }
   } catch (err) {
-    res.writeHead(307, { Location: '/login' }).end();
-    return { props: { ok: false, reason: "some error description for your own consumption, not for client side" } }
+    res.writeHead(307, { Location: '/login' }).end()
   }
-};
+}
