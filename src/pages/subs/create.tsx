@@ -112,6 +112,6 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
     return { props: {} };
   } catch (err) {
     res.writeHead(307, { Location: '/login' }).end();
+    return { props: { ok: false, reason: "some error description for your own consumption, not for client side" } }
   }
-  return { props: {} };
 };
