@@ -20,14 +20,14 @@ class MyDocument extends Document {
           <meta property='og:site_name' content='reddit' />
           <meta property='twitter:card' content='summary' />
           <meta property='og:type' content='website' />
-          <meta
+          {/* <meta
             property='og:image'
             content={`${process.env.NEXT_PUBLIC_CLIENT_BASE_URL}/reddit.svg`}
           />
           <meta
             property='twitter:image'
             content={`${process.env.NEXT_PUBLIC_CLIENT_BASE_URL}/reddit.svg`}
-          />
+          /> */}
           {/* <meta property='twitter:site' content='@readit' /> */}
           <link rel='preconnect' href='https://fonts.gstatic.com' />
           <link
