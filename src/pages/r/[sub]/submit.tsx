@@ -92,4 +92,5 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   } catch (err) {
     res.writeHead(307, { Location: '/login' }).end();
   }
+  return { props: {} };
 };
